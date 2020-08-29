@@ -1,0 +1,34 @@
+﻿@model WebHospital.Models.Estadotratamiento
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Estadotratamiento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Estadotratamiento1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estadotratamiento1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idestadotratamiento }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

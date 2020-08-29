@@ -1,0 +1,66 @@
+﻿@model WebHospital.Models.Usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_Usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_Usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contraseña_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contraseña_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_usuariocreador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_usuariocreador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Controlpermiso.nombrecontrolpermiso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Controlpermiso.nombrecontrolpermiso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado.Nombre_empleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.Nombre_empleado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idUsuario }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,49 @@
+﻿@model WebHospital.Models.Cita
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar registro</h2>
+
+<h3>Desea eliminar este registro?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <a>Fecha</a>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_cita)
+        </dd>
+
+        <dt>
+            <a>Estado</a>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            <a>Código Paciente</a>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paciente.Codigo_paciente)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a href="/Citas/Index?" class="btn btn-default">Regresar</a>
+            @*@Html.ActionLink("Back to List", "Index")*@
+        </div>
+    }
+</div>

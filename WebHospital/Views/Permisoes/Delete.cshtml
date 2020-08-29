@@ -1,0 +1,41 @@
+﻿@model WebHospital.Models.Permiso
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar registro</h2>
+
+<h3>Desea eliminar este registro?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <a>Permiso</a>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_permiso)
+        </dd>
+
+        <dt>
+            <a>Estado</a>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Delete" class="btn btn-default" /> |
+    @*@Html.ActionLink("Back to List", "Index")*@
+    <a href="/permisoes/Index?" class="btn btn-default">Regresar</a>
+</div>
+    }
+</div>

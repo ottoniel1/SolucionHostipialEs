@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebHospital.Models.Tipousuario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tipo usuario</h2>
+
+<p>
+    <a href="/Tipousuarios/Create? " class="btn btn-success">Nuevo Registro</a>
+    <a href="/Menu/Index? " class="btn btn-default">Regresar</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Tipo usuario
+        </th>
+        <th>
+            
+        </th>
+        <th>
+            Opciones
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_tipousuario)
+        </td>
+        <td>
+            
+        </td>
+        <td>
+            <a href="/Tipousuarios/Edit?id=@item.idtipo_usuario" class="btn btn-warning">Editar</a> |
+            <a href="/Tipousuarios/Details?id=@item.idtipo_usuario" class="btn btn-info">Detalles</a> |
+            <a href="/Tipousuarios/Delete?id=@item.idtipo_usuario" class="btn btn-danger">Eliminar</a>
+        </td>
+    </tr>
+}
+
+</table>

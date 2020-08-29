@@ -1,0 +1,42 @@
+﻿@model WebHospital.Models.Medicamento
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Medicamento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_medicamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_medicamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion_medicamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion_medicamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idmedicamento }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

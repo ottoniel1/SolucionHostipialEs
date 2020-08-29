@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebHospital.Models.Cita>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de citas</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+    <a href="/Citas/Create? " class="btn btn-success">Registro</a>
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            Fecha
+        </th>
+        <th>
+            Estado
+        </th>
+        <th>
+            Código Paciente
+        </th>
+        <th>
+            Opciones
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_cita)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paciente.Codigo_paciente)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.idcita }) |
+            @Html.ActionLink("Details", "Details", new { id = item.idcita }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.idcita })*@
+
+            <a href="/Citas/Edit?id=@item.idcita" class="btn btn-warning">Editar</a> |
+            <a href="/Citas/Details?id=@item.idcita" class="btn btn-info">Detalles</a> |
+            <a href="/Citas/Delete?id=@item.idcita" class="btn btn-danger">Eliminar</a>
+        </td>
+    </tr>
+}
+
+</table>

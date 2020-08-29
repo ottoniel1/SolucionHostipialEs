@@ -1,0 +1,72 @@
+﻿@model WebHospital.Models.Estadocita
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Estadocita</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_estadocita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_estadocita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado_citap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado_citap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cita.idcita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cita.idcita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Medicamento.Nombre_medicamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Medicamento.Nombre_medicamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Paciente.Codigo_paciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paciente.Codigo_paciente)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

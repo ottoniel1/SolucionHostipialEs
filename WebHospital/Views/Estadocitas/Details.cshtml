@@ -1,0 +1,66 @@
+﻿@model WebHospital.Models.Estadocita
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Estadocita</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_estadocita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_estadocita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado_citap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado_citap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cita.idcita)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cita.idcita)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Medicamento.Nombre_medicamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Medicamento.Nombre_medicamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Paciente.Codigo_paciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paciente.Codigo_paciente)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idEstadocita }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

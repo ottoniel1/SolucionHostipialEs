@@ -1,0 +1,87 @@
+﻿@model IEnumerable<WebHospital.Models.Contactospaciente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_contacto1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_contacto2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido_contacto1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido_contacto2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departamento.Nombre_depto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Municipio.Nombre_muni)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Paciente.Codigo_paciente)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_contacto1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_contacto2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellido_contacto1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellido_contacto2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departamento.Nombre_depto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Municipio.Nombre_muni)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paciente.Codigo_paciente)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idcontactospaciente }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idcontactospaciente }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idcontactospaciente })
+        </td>
+    </tr>
+}
+
+</table>

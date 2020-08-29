@@ -1,0 +1,1435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="bd_hospitalEscUAIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cita">
+          <Key>
+            <PropertyRef Name="idcita" />
+          </Key>
+          <Property Name="idcita" Type="int" Nullable="false" />
+          <Property Name="idPaciente" Type="int" Nullable="false" />
+          <Property Name="fecha_cita" Type="date" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contactospaciente">
+          <Key>
+            <PropertyRef Name="idcontactospaciente" />
+          </Key>
+          <Property Name="idcontactospaciente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPaciente" Type="int" Nullable="false" />
+          <Property Name="nombre_contacto1" Type="varchar" MaxLength="50" />
+          <Property Name="nombre_contacto2" Type="varchar" MaxLength="50" />
+          <Property Name="apellido_contacto1" Type="varchar" MaxLength="50" />
+          <Property Name="apellido_contacto2" Type="varchar" MaxLength="50" />
+          <Property Name="telefono" Type="int" />
+          <Property Name="direccion" Type="varchar" MaxLength="100" />
+          <Property Name="idDepartamento" Type="int" Nullable="false" />
+          <Property Name="idMunicipio" Type="int" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Controlpermiso">
+          <Key>
+            <PropertyRef Name="idcontrol_permiso" />
+          </Key>
+          <Property Name="idcontrol_permiso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombrecontrolpermiso" Type="varchar" MaxLength="100" />
+          <Property Name="idtipo_usuario" Type="int" Nullable="false" />
+          <Property Name="idPermiso" Type="int" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Departamento">
+          <Key>
+            <PropertyRef Name="idDepartamento" />
+          </Key>
+          <Property Name="idDepartamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre_depto" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="idempleado" />
+          </Key>
+          <Property Name="idempleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idpuesto" Type="int" Nullable="false" />
+          <Property Name="idInstitucion" Type="int" Nullable="false" />
+          <Property Name="Nombre_empleado" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="100" />
+          <Property Name="telefono" Type="int" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Estadocita">
+          <Key>
+            <PropertyRef Name="idEstadocita" />
+          </Key>
+          <Property Name="idEstadocita" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idcita" Type="int" Nullable="false" />
+          <Property Name="idPaciente" Type="int" Nullable="false" />
+          <Property Name="idmedicamento" Type="int" />
+          <Property Name="fecha_estadocita" Type="date" Nullable="false" />
+          <Property Name="estado_citap" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Estadopaciente">
+          <Key>
+            <PropertyRef Name="idEstadopaciente" />
+          </Key>
+          <Property Name="idEstadopaciente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="estadodelpaciente" Type="varchar" MaxLength="50" />
+          <Property Name="fecha_estadop" Type="date" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Estadotratamiento">
+          <Key>
+            <PropertyRef Name="idestadotratamiento" />
+          </Key>
+          <Property Name="idestadotratamiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Estadotratamiento" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Institucion">
+          <Key>
+            <PropertyRef Name="idInstitucion" />
+          </Key>
+          <Property Name="idInstitucion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_institucion" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Medicamento">
+          <Key>
+            <PropertyRef Name="idmedicamento" />
+          </Key>
+          <Property Name="idmedicamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre_medicamento" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcion_medicamento" Type="varchar" MaxLength="100" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Municipio">
+          <Key>
+            <PropertyRef Name="idMunicipio" />
+          </Key>
+          <Property Name="idMunicipio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre_muni" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Paciente">
+          <Key>
+            <PropertyRef Name="idPaciente" />
+          </Key>
+          <Property Name="idPaciente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idEstadopaciente" Type="int" Nullable="false" />
+          <Property Name="idtipopaciente" Type="int" Nullable="false" />
+          <Property Name="idUsuario" Type="int" Nullable="false" />
+          <Property Name="idDepartamento" Type="int" Nullable="false" />
+          <Property Name="idMunicipio" Type="int" Nullable="false" />
+          <Property Name="Codigo_paciente" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre_paciente1" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre_paciente2" Type="varchar" MaxLength="50" />
+          <Property Name="Apellido_paciente1" Type="varchar" MaxLength="50" />
+          <Property Name="Apellido_paciente2" Type="varchar" MaxLength="50" />
+          <Property Name="Fecha_nacimiento" Type="date" />
+          <Property Name="edad" Type="int" />
+          <Property Name="sexo" Type="varchar" MaxLength="3" />
+          <Property Name="orientacion_sexual" Type="varchar" MaxLength="100" />
+          <Property Name="telefono" Type="int" />
+          <Property Name="fecha_registro" Type="date" />
+          <Property Name="direccion" Type="varchar" MaxLength="100" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Permiso">
+          <Key>
+            <PropertyRef Name="idPermiso" />
+          </Key>
+          <Property Name="idPermiso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_permiso" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prueba">
+          <Key>
+            <PropertyRef Name="idprueba" />
+          </Key>
+          <Property Name="idprueba" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPaciente" Type="int" Nullable="false" />
+          <Property Name="prueba_rapVIH" Type="varchar" MaxLength="100" />
+          <Property Name="carga_viral" Type="varchar" MaxLength="100" />
+          <Property Name="CD4" Type="varchar" MaxLength="100" />
+          <Property Name="cripto" Type="varchar" MaxLength="100" />
+          <Property Name="histo" Type="varchar" MaxLength="100" />
+          <Property Name="TB_lam" Type="varchar" MaxLength="100" />
+          <Property Name="comentario" Type="varchar" MaxLength="500" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Puesto">
+          <Key>
+            <PropertyRef Name="idpuesto" />
+          </Key>
+          <Property Name="idpuesto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_puesto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descripcion_puesto" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tipopaciente">
+          <Key>
+            <PropertyRef Name="idtipopaciente" />
+          </Key>
+          <Property Name="idtipopaciente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="iniciales" Type="varchar" MaxLength="4" />
+          <Property Name="descripciontipopaciente" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tipousuario">
+          <Key>
+            <PropertyRef Name="idtipo_usuario" />
+          </Key>
+          <Property Name="idtipo_usuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_tipousuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tratamiento">
+          <Key>
+            <PropertyRef Name="idtratamiento" />
+          </Key>
+          <Property Name="idtratamiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPaciente" Type="int" Nullable="false" />
+          <Property Name="idestadotratamiento" Type="int" Nullable="false" />
+          <Property Name="fecha_inicio" Type="date" Nullable="false" />
+          <Property Name="nombre_tratamiento" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion_tratamiento" Type="varchar" MaxLength="100" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idcontrol_permiso" Type="int" Nullable="false" />
+          <Property Name="idempleado" Type="int" Nullable="false" />
+          <Property Name="Nombre_Usuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="contraseña_usuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nombre_usuariocreador" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_cita_Paciente">
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="1" />
+          <End Role="Cita" Type="Self.Cita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="Cita">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_contactospaciente_Departamento">
+          <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
+          <End Role="Contactospaciente" Type="Self.Contactospaciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="idDepartamento" />
+            </Principal>
+            <Dependent Role="Contactospaciente">
+              <PropertyRef Name="idDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_contactospaciente_Municipio">
+          <End Role="Municipio" Type="Self.Municipio" Multiplicity="1" />
+          <End Role="Contactospaciente" Type="Self.Contactospaciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="idMunicipio" />
+            </Principal>
+            <Dependent Role="Contactospaciente">
+              <PropertyRef Name="idMunicipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_contactospaciente_Paciente">
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="1" />
+          <End Role="Contactospaciente" Type="Self.Contactospaciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="Contactospaciente">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_controlpermiso_permiso">
+          <End Role="Permiso" Type="Self.Permiso" Multiplicity="1" />
+          <End Role="Controlpermiso" Type="Self.Controlpermiso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permiso">
+              <PropertyRef Name="idPermiso" />
+            </Principal>
+            <Dependent Role="Controlpermiso">
+              <PropertyRef Name="idPermiso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_controlpermiso_tipousuario">
+          <End Role="Tipousuario" Type="Self.Tipousuario" Multiplicity="1" />
+          <End Role="Controlpermiso" Type="Self.Controlpermiso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipousuario">
+              <PropertyRef Name="idtipo_usuario" />
+            </Principal>
+            <Dependent Role="Controlpermiso">
+              <PropertyRef Name="idtipo_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_empleado_institucion">
+          <End Role="Institucion" Type="Self.Institucion" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Institucion">
+              <PropertyRef Name="idInstitucion" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="idInstitucion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_empleado_puesto">
+          <End Role="Puesto" Type="Self.Puesto" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Puesto">
+              <PropertyRef Name="idpuesto" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="idpuesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Estadocita_cita">
+          <End Role="Cita" Type="Self.Cita" Multiplicity="1" />
+          <End Role="Estadocita" Type="Self.Estadocita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cita">
+              <PropertyRef Name="idcita" />
+            </Principal>
+            <Dependent Role="Estadocita">
+              <PropertyRef Name="idcita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Estadocita_medicamento">
+          <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="0..1" />
+          <End Role="Estadocita" Type="Self.Estadocita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicamento">
+              <PropertyRef Name="idmedicamento" />
+            </Principal>
+            <Dependent Role="Estadocita">
+              <PropertyRef Name="idmedicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Estadocita_Paciente">
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="1" />
+          <End Role="Estadocita" Type="Self.Estadocita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="Estadocita">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_paciente_departamento">
+          <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="idDepartamento" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="idDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Paciente_estadopaciente">
+          <End Role="Estadopaciente" Type="Self.Estadopaciente" Multiplicity="1" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estadopaciente">
+              <PropertyRef Name="idEstadopaciente" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="idEstadopaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_paciente_municipio">
+          <End Role="Municipio" Type="Self.Municipio" Multiplicity="1" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="idMunicipio" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="idMunicipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Paciente_tipopaciente">
+          <End Role="Tipopaciente" Type="Self.Tipopaciente" Multiplicity="1" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipopaciente">
+              <PropertyRef Name="idtipopaciente" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="idtipopaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_paciente_usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_prueba_paciente">
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="1" />
+          <End Role="Prueba" Type="Self.Prueba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="Prueba">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tratamiento_estadotratamiento">
+          <End Role="Estadotratamiento" Type="Self.Estadotratamiento" Multiplicity="1" />
+          <End Role="Tratamiento" Type="Self.Tratamiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estadotratamiento">
+              <PropertyRef Name="idestadotratamiento" />
+            </Principal>
+            <Dependent Role="Tratamiento">
+              <PropertyRef Name="idestadotratamiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tratamiento_Paciente">
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="1" />
+          <End Role="Tratamiento" Type="Self.Tratamiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="Tratamiento">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_usuario_empleado">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="idempleado" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="idempleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_usuario_tipousuario">
+          <End Role="Controlpermiso" Type="Self.Controlpermiso" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Controlpermiso">
+              <PropertyRef Name="idcontrol_permiso" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="idcontrol_permiso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bd_hospitalEscUAIModelStoreContainer">
+          <EntitySet Name="Cita" EntityType="Self.Cita" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contactospaciente" EntityType="Self.Contactospaciente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Controlpermiso" EntityType="Self.Controlpermiso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estadocita" EntityType="Self.Estadocita" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estadopaciente" EntityType="Self.Estadopaciente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estadotratamiento" EntityType="Self.Estadotratamiento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Institucion" EntityType="Self.Institucion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medicamento" EntityType="Self.Medicamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Municipio" EntityType="Self.Municipio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Paciente" EntityType="Self.Paciente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Permiso" EntityType="Self.Permiso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prueba" EntityType="Self.Prueba" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Puesto" EntityType="Self.Puesto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipopaciente" EntityType="Self.Tipopaciente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipousuario" EntityType="Self.Tipousuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tratamiento" EntityType="Self.Tratamiento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_cita_Paciente" Association="Self.fk_cita_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Cita" EntitySet="Cita" />
+          </AssociationSet>
+          <AssociationSet Name="fk_contactospaciente_Departamento" Association="Self.fk_contactospaciente_Departamento">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Contactospaciente" EntitySet="Contactospaciente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_contactospaciente_Municipio" Association="Self.fk_contactospaciente_Municipio">
+            <End Role="Municipio" EntitySet="Municipio" />
+            <End Role="Contactospaciente" EntitySet="Contactospaciente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_contactospaciente_Paciente" Association="Self.fk_contactospaciente_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Contactospaciente" EntitySet="Contactospaciente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_controlpermiso_permiso" Association="Self.fk_controlpermiso_permiso">
+            <End Role="Permiso" EntitySet="Permiso" />
+            <End Role="Controlpermiso" EntitySet="Controlpermiso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_controlpermiso_tipousuario" Association="Self.fk_controlpermiso_tipousuario">
+            <End Role="Tipousuario" EntitySet="Tipousuario" />
+            <End Role="Controlpermiso" EntitySet="Controlpermiso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_empleado_institucion" Association="Self.fk_empleado_institucion">
+            <End Role="Institucion" EntitySet="Institucion" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="fk_empleado_puesto" Association="Self.fk_empleado_puesto">
+            <End Role="Puesto" EntitySet="Puesto" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Estadocita_cita" Association="Self.fk_Estadocita_cita">
+            <End Role="Cita" EntitySet="Cita" />
+            <End Role="Estadocita" EntitySet="Estadocita" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Estadocita_medicamento" Association="Self.fk_Estadocita_medicamento">
+            <End Role="Medicamento" EntitySet="Medicamento" />
+            <End Role="Estadocita" EntitySet="Estadocita" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Estadocita_Paciente" Association="Self.fk_Estadocita_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Estadocita" EntitySet="Estadocita" />
+          </AssociationSet>
+          <AssociationSet Name="fk_paciente_departamento" Association="Self.fk_paciente_departamento">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Paciente" EntitySet="Paciente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Paciente_estadopaciente" Association="Self.fk_Paciente_estadopaciente">
+            <End Role="Estadopaciente" EntitySet="Estadopaciente" />
+            <End Role="Paciente" EntitySet="Paciente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_paciente_municipio" Association="Self.fk_paciente_municipio">
+            <End Role="Municipio" EntitySet="Municipio" />
+            <End Role="Paciente" EntitySet="Paciente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Paciente_tipopaciente" Association="Self.fk_Paciente_tipopaciente">
+            <End Role="Tipopaciente" EntitySet="Tipopaciente" />
+            <End Role="Paciente" EntitySet="Paciente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_paciente_usuario" Association="Self.fk_paciente_usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Paciente" EntitySet="Paciente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_prueba_paciente" Association="Self.fk_prueba_paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Prueba" EntitySet="Prueba" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tratamiento_estadotratamiento" Association="Self.fk_tratamiento_estadotratamiento">
+            <End Role="Estadotratamiento" EntitySet="Estadotratamiento" />
+            <End Role="Tratamiento" EntitySet="Tratamiento" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tratamiento_Paciente" Association="Self.fk_tratamiento_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Tratamiento" EntitySet="Tratamiento" />
+          </AssociationSet>
+          <AssociationSet Name="fk_usuario_empleado" Association="Self.fk_usuario_empleado">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_usuario_tipousuario" Association="Self.fk_usuario_tipousuario">
+            <End Role="Controlpermiso" EntitySet="Controlpermiso" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bd_hospitalEscUAIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cita">
+          <Key>
+            <PropertyRef Name="idcita" />
+          </Key>
+          <Property Name="idcita" Type="Int32" Nullable="false" />
+          <Property Name="idPaciente" Type="Int32" Nullable="false" />
+          <Property Name="fecha_cita" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Paciente" Relationship="Self.fk_cita_Paciente" FromRole="Cita" ToRole="Paciente" />
+          <NavigationProperty Name="Estadocita" Relationship="Self.fk_Estadocita_cita" FromRole="Cita" ToRole="Estadocita" />
+        </EntityType>
+        <EntityType Name="Contactospaciente">
+          <Key>
+            <PropertyRef Name="idcontactospaciente" />
+          </Key>
+          <Property Name="idcontactospaciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPaciente" Type="Int32" Nullable="false" />
+          <Property Name="nombre_contacto1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nombre_contacto2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellido_contacto1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apellido_contacto2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="Int32" />
+          <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="idDepartamento" Type="Int32" Nullable="false" />
+          <Property Name="idMunicipio" Type="Int32" Nullable="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Departamento" Relationship="Self.fk_contactospaciente_Departamento" FromRole="Contactospaciente" ToRole="Departamento" />
+          <NavigationProperty Name="Municipio" Relationship="Self.fk_contactospaciente_Municipio" FromRole="Contactospaciente" ToRole="Municipio" />
+          <NavigationProperty Name="Paciente" Relationship="Self.fk_contactospaciente_Paciente" FromRole="Contactospaciente" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="Controlpermiso">
+          <Key>
+            <PropertyRef Name="idcontrol_permiso" />
+          </Key>
+          <Property Name="idcontrol_permiso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombrecontrolpermiso" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="idtipo_usuario" Type="Int32" Nullable="false" />
+          <Property Name="idPermiso" Type="Int32" Nullable="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Permiso" Relationship="Self.fk_controlpermiso_permiso" FromRole="Controlpermiso" ToRole="Permiso" />
+          <NavigationProperty Name="Tipousuario" Relationship="Self.fk_controlpermiso_tipousuario" FromRole="Controlpermiso" ToRole="Tipousuario" />
+          <NavigationProperty Name="Usuario" Relationship="Self.fk_usuario_tipousuario" FromRole="Controlpermiso" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Departamento">
+          <Key>
+            <PropertyRef Name="idDepartamento" />
+          </Key>
+          <Property Name="idDepartamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre_depto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Contactospaciente" Relationship="Self.fk_contactospaciente_Departamento" FromRole="Departamento" ToRole="Contactospaciente" />
+          <NavigationProperty Name="Paciente" Relationship="Self.fk_paciente_departamento" FromRole="Departamento" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="Empleado">
+          <Key>
+            <PropertyRef Name="idempleado" />
+          </Key>
+          <Property Name="idempleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idpuesto" Type="Int32" Nullable="false" />
+          <Property Name="idInstitucion" Type="Int32" Nullable="false" />
+          <Property Name="Nombre_empleado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="Int32" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Institucion" Relationship="Self.fk_empleado_institucion" FromRole="Empleado" ToRole="Institucion" />
+          <NavigationProperty Name="Puesto" Relationship="Self.fk_empleado_puesto" FromRole="Empleado" ToRole="Puesto" />
+          <NavigationProperty Name="Usuario" Relationship="Self.fk_usuario_empleado" FromRole="Empleado" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Estadocita">
+          <Key>
+            <PropertyRef Name="idEstadocita" />
+          </Key>
+          <Property Name="idEstadocita" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idcita" Type="Int32" Nullable="false" />
+          <Property Name="idPaciente" Type="Int32" Nullable="false" />
+          <Property Name="idmedicamento" Type="Int32" />
+          <Property Name="fecha_estadocita" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="estado_citap" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cita" Relationship="Self.fk_Estadocita_cita" FromRole="Estadocita" ToRole="Cita" />
+          <NavigationProperty Name="Medicamento" Relationship="Self.fk_Estadocita_medicamento" FromRole="Estadocita" ToRole="Medicamento" />
+          <NavigationProperty Name="Paciente" Relationship="Self.fk_Estadocita_Paciente" FromRole="Estadocita" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="Estadopaciente">
+          <Key>
+            <PropertyRef Name="idEstadopaciente" />
+          </Key>
+          <Property Name="idEstadopaciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="estadodelpaciente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_estadop" Type="DateTime" Precision="0" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Paciente" Relationship="Self.fk_Paciente_estadopaciente" FromRole="Estadopaciente" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="Estadotratamiento">
+          <Key>
+            <PropertyRef Name="idestadotratamiento" />
+          </Key>
+          <Property Name="idestadotratamiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Estadotratamiento1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Tratamiento" Relationship="Self.fk_tratamiento_estadotratamiento" FromRole="Estadotratamiento" ToRole="Tratamiento" />
+        </EntityType>
+        <EntityType Name="Institucion">
+          <Key>
+            <PropertyRef Name="idInstitucion" />
+          </Key>
+          <Property Name="idInstitucion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_institucion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Empleado" Relationship="Self.fk_empleado_institucion" FromRole="Institucion" ToRole="Empleado" />
+        </EntityType>
+        <EntityType Name="Medicamento">
+          <Key>
+            <PropertyRef Name="idmedicamento" />
+          </Key>
+          <Property Name="idmedicamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre_medicamento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion_medicamento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Estadocita" Relationship="Self.fk_Estadocita_medicamento" FromRole="Medicamento" ToRole="Estadocita" />
+        </EntityType>
+        <EntityType Name="Municipio">
+          <Key>
+            <PropertyRef Name="idMunicipio" />
+          </Key>
+          <Property Name="idMunicipio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre_muni" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Contactospaciente" Relationship="Self.fk_contactospaciente_Municipio" FromRole="Municipio" ToRole="Contactospaciente" />
+          <NavigationProperty Name="Paciente" Relationship="Self.fk_paciente_municipio" FromRole="Municipio" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="Paciente">
+          <Key>
+            <PropertyRef Name="idPaciente" />
+          </Key>
+          <Property Name="idPaciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idEstadopaciente" Type="Int32" Nullable="false" />
+          <Property Name="idtipopaciente" Type="Int32" Nullable="false" />
+          <Property Name="idUsuario" Type="Int32" Nullable="false" />
+          <Property Name="idDepartamento" Type="Int32" Nullable="false" />
+          <Property Name="idMunicipio" Type="Int32" Nullable="false" />
+          <Property Name="Codigo_paciente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre_paciente1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre_paciente2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido_paciente1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido_paciente2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha_nacimiento" Type="DateTime" Precision="0" />
+          <Property Name="edad" Type="Int32" />
+          <Property Name="sexo" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="orientacion_sexual" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="Int32" />
+          <Property Name="fecha_registro" Type="DateTime" Precision="0" />
+          <Property Name="direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cita" Relationship="Self.fk_cita_Paciente" FromRole="Paciente" ToRole="Cita" />
+          <NavigationProperty Name="Contactospaciente" Relationship="Self.fk_contactospaciente_Paciente" FromRole="Paciente" ToRole="Contactospaciente" />
+          <NavigationProperty Name="Departamento" Relationship="Self.fk_paciente_departamento" FromRole="Paciente" ToRole="Departamento" />
+          <NavigationProperty Name="Estadocita" Relationship="Self.fk_Estadocita_Paciente" FromRole="Paciente" ToRole="Estadocita" />
+          <NavigationProperty Name="Estadopaciente" Relationship="Self.fk_Paciente_estadopaciente" FromRole="Paciente" ToRole="Estadopaciente" />
+          <NavigationProperty Name="Municipio" Relationship="Self.fk_paciente_municipio" FromRole="Paciente" ToRole="Municipio" />
+          <NavigationProperty Name="Tipopaciente" Relationship="Self.fk_Paciente_tipopaciente" FromRole="Paciente" ToRole="Tipopaciente" />
+          <NavigationProperty Name="Usuario" Relationship="Self.fk_paciente_usuario" FromRole="Paciente" ToRole="Usuario" />
+          <NavigationProperty Name="Prueba" Relationship="Self.fk_prueba_paciente" FromRole="Paciente" ToRole="Prueba" />
+          <NavigationProperty Name="Tratamiento" Relationship="Self.fk_tratamiento_Paciente" FromRole="Paciente" ToRole="Tratamiento" />
+        </EntityType>
+        <EntityType Name="Permiso">
+          <Key>
+            <PropertyRef Name="idPermiso" />
+          </Key>
+          <Property Name="idPermiso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_permiso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Controlpermiso" Relationship="Self.fk_controlpermiso_permiso" FromRole="Permiso" ToRole="Controlpermiso" />
+        </EntityType>
+        <EntityType Name="Prueba">
+          <Key>
+            <PropertyRef Name="idprueba" />
+          </Key>
+          <Property Name="idprueba" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPaciente" Type="Int32" Nullable="false" />
+          <Property Name="prueba_rapVIH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="carga_viral" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CD4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cripto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="histo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TB_lam" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="comentario" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Paciente" Relationship="Self.fk_prueba_paciente" FromRole="Prueba" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="Puesto">
+          <Key>
+            <PropertyRef Name="idpuesto" />
+          </Key>
+          <Property Name="idpuesto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_puesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion_puesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Empleado" Relationship="Self.fk_empleado_puesto" FromRole="Puesto" ToRole="Empleado" />
+        </EntityType>
+        <EntityType Name="Tipopaciente">
+          <Key>
+            <PropertyRef Name="idtipopaciente" />
+          </Key>
+          <Property Name="idtipopaciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="iniciales" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="descripciontipopaciente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Paciente" Relationship="Self.fk_Paciente_tipopaciente" FromRole="Tipopaciente" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="Tipousuario">
+          <Key>
+            <PropertyRef Name="idtipo_usuario" />
+          </Key>
+          <Property Name="idtipo_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_tipousuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Controlpermiso" Relationship="Self.fk_controlpermiso_tipousuario" FromRole="Tipousuario" ToRole="Controlpermiso" />
+        </EntityType>
+        <EntityType Name="Tratamiento">
+          <Key>
+            <PropertyRef Name="idtratamiento" />
+          </Key>
+          <Property Name="idtratamiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPaciente" Type="Int32" Nullable="false" />
+          <Property Name="idestadotratamiento" Type="Int32" Nullable="false" />
+          <Property Name="fecha_inicio" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="nombre_tratamiento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion_tratamiento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Estadotratamiento" Relationship="Self.fk_tratamiento_estadotratamiento" FromRole="Tratamiento" ToRole="Estadotratamiento" />
+          <NavigationProperty Name="Paciente" Relationship="Self.fk_tratamiento_Paciente" FromRole="Tratamiento" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idcontrol_permiso" Type="Int32" Nullable="false" />
+          <Property Name="idempleado" Type="Int32" Nullable="false" />
+          <Property Name="Nombre_Usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contraseña_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre_usuariocreador" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Controlpermiso" Relationship="Self.fk_usuario_tipousuario" FromRole="Usuario" ToRole="Controlpermiso" />
+          <NavigationProperty Name="Empleado" Relationship="Self.fk_usuario_empleado" FromRole="Usuario" ToRole="Empleado" />
+          <NavigationProperty Name="Paciente" Relationship="Self.fk_paciente_usuario" FromRole="Usuario" ToRole="Paciente" />
+        </EntityType>
+        <Association Name="fk_cita_Paciente">
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="1" />
+          <End Role="Cita" Type="Self.Cita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="Cita">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Estadocita_cita">
+          <End Role="Cita" Type="Self.Cita" Multiplicity="1" />
+          <End Role="Estadocita" Type="Self.Estadocita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cita">
+              <PropertyRef Name="idcita" />
+            </Principal>
+            <Dependent Role="Estadocita">
+              <PropertyRef Name="idcita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_contactospaciente_Departamento">
+          <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
+          <End Role="Contactospaciente" Type="Self.Contactospaciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="idDepartamento" />
+            </Principal>
+            <Dependent Role="Contactospaciente">
+              <PropertyRef Name="idDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_contactospaciente_Municipio">
+          <End Role="Municipio" Type="Self.Municipio" Multiplicity="1" />
+          <End Role="Contactospaciente" Type="Self.Contactospaciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="idMunicipio" />
+            </Principal>
+            <Dependent Role="Contactospaciente">
+              <PropertyRef Name="idMunicipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_contactospaciente_Paciente">
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="1" />
+          <End Role="Contactospaciente" Type="Self.Contactospaciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="Contactospaciente">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_controlpermiso_permiso">
+          <End Role="Permiso" Type="Self.Permiso" Multiplicity="1" />
+          <End Role="Controlpermiso" Type="Self.Controlpermiso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permiso">
+              <PropertyRef Name="idPermiso" />
+            </Principal>
+            <Dependent Role="Controlpermiso">
+              <PropertyRef Name="idPermiso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_controlpermiso_tipousuario">
+          <End Role="Tipousuario" Type="Self.Tipousuario" Multiplicity="1" />
+          <End Role="Controlpermiso" Type="Self.Controlpermiso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipousuario">
+              <PropertyRef Name="idtipo_usuario" />
+            </Principal>
+            <Dependent Role="Controlpermiso">
+              <PropertyRef Name="idtipo_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_usuario_tipousuario">
+          <End Role="Controlpermiso" Type="Self.Controlpermiso" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Controlpermiso">
+              <PropertyRef Name="idcontrol_permiso" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="idcontrol_permiso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_paciente_departamento">
+          <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="idDepartamento" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="idDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_empleado_institucion">
+          <End Role="Institucion" Type="Self.Institucion" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Institucion">
+              <PropertyRef Name="idInstitucion" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="idInstitucion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_empleado_puesto">
+          <End Role="Puesto" Type="Self.Puesto" Multiplicity="1" />
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Puesto">
+              <PropertyRef Name="idpuesto" />
+            </Principal>
+            <Dependent Role="Empleado">
+              <PropertyRef Name="idpuesto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_usuario_empleado">
+          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleado">
+              <PropertyRef Name="idempleado" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="idempleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Estadocita_medicamento">
+          <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="0..1" />
+          <End Role="Estadocita" Type="Self.Estadocita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicamento">
+              <PropertyRef Name="idmedicamento" />
+            </Principal>
+            <Dependent Role="Estadocita">
+              <PropertyRef Name="idmedicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Estadocita_Paciente">
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="1" />
+          <End Role="Estadocita" Type="Self.Estadocita" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="Estadocita">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Paciente_estadopaciente">
+          <End Role="Estadopaciente" Type="Self.Estadopaciente" Multiplicity="1" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estadopaciente">
+              <PropertyRef Name="idEstadopaciente" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="idEstadopaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tratamiento_estadotratamiento">
+          <End Role="Estadotratamiento" Type="Self.Estadotratamiento" Multiplicity="1" />
+          <End Role="Tratamiento" Type="Self.Tratamiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estadotratamiento">
+              <PropertyRef Name="idestadotratamiento" />
+            </Principal>
+            <Dependent Role="Tratamiento">
+              <PropertyRef Name="idestadotratamiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_paciente_municipio">
+          <End Role="Municipio" Type="Self.Municipio" Multiplicity="1" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Municipio">
+              <PropertyRef Name="idMunicipio" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="idMunicipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Paciente_tipopaciente">
+          <End Role="Tipopaciente" Type="Self.Tipopaciente" Multiplicity="1" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipopaciente">
+              <PropertyRef Name="idtipopaciente" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="idtipopaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_paciente_usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="idUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_prueba_paciente">
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="1" />
+          <End Role="Prueba" Type="Self.Prueba" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="Prueba">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tratamiento_Paciente">
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="1" />
+          <End Role="Tratamiento" Type="Self.Tratamiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="Tratamiento">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bd_hospitalEscUAIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cita" EntityType="Self.Cita" />
+          <EntitySet Name="Contactospaciente" EntityType="Self.Contactospaciente" />
+          <EntitySet Name="Controlpermiso" EntityType="Self.Controlpermiso" />
+          <EntitySet Name="Departamento" EntityType="Self.Departamento" />
+          <EntitySet Name="Empleado" EntityType="Self.Empleado" />
+          <EntitySet Name="Estadocita" EntityType="Self.Estadocita" />
+          <EntitySet Name="Estadopaciente" EntityType="Self.Estadopaciente" />
+          <EntitySet Name="Estadotratamiento" EntityType="Self.Estadotratamiento" />
+          <EntitySet Name="Institucion" EntityType="Self.Institucion" />
+          <EntitySet Name="Medicamento" EntityType="Self.Medicamento" />
+          <EntitySet Name="Municipio" EntityType="Self.Municipio" />
+          <EntitySet Name="Paciente" EntityType="Self.Paciente" />
+          <EntitySet Name="Permiso" EntityType="Self.Permiso" />
+          <EntitySet Name="Prueba" EntityType="Self.Prueba" />
+          <EntitySet Name="Puesto" EntityType="Self.Puesto" />
+          <EntitySet Name="Tipopaciente" EntityType="Self.Tipopaciente" />
+          <EntitySet Name="Tipousuario" EntityType="Self.Tipousuario" />
+          <EntitySet Name="Tratamiento" EntityType="Self.Tratamiento" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <AssociationSet Name="fk_cita_Paciente" Association="Self.fk_cita_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Cita" EntitySet="Cita" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Estadocita_cita" Association="Self.fk_Estadocita_cita">
+            <End Role="Cita" EntitySet="Cita" />
+            <End Role="Estadocita" EntitySet="Estadocita" />
+          </AssociationSet>
+          <AssociationSet Name="fk_contactospaciente_Departamento" Association="Self.fk_contactospaciente_Departamento">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Contactospaciente" EntitySet="Contactospaciente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_contactospaciente_Municipio" Association="Self.fk_contactospaciente_Municipio">
+            <End Role="Municipio" EntitySet="Municipio" />
+            <End Role="Contactospaciente" EntitySet="Contactospaciente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_contactospaciente_Paciente" Association="Self.fk_contactospaciente_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Contactospaciente" EntitySet="Contactospaciente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_controlpermiso_permiso" Association="Self.fk_controlpermiso_permiso">
+            <End Role="Permiso" EntitySet="Permiso" />
+            <End Role="Controlpermiso" EntitySet="Controlpermiso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_controlpermiso_tipousuario" Association="Self.fk_controlpermiso_tipousuario">
+            <End Role="Tipousuario" EntitySet="Tipousuario" />
+            <End Role="Controlpermiso" EntitySet="Controlpermiso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_usuario_tipousuario" Association="Self.fk_usuario_tipousuario">
+            <End Role="Controlpermiso" EntitySet="Controlpermiso" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_paciente_departamento" Association="Self.fk_paciente_departamento">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Paciente" EntitySet="Paciente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_empleado_institucion" Association="Self.fk_empleado_institucion">
+            <End Role="Institucion" EntitySet="Institucion" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="fk_empleado_puesto" Association="Self.fk_empleado_puesto">
+            <End Role="Puesto" EntitySet="Puesto" />
+            <End Role="Empleado" EntitySet="Empleado" />
+          </AssociationSet>
+          <AssociationSet Name="fk_usuario_empleado" Association="Self.fk_usuario_empleado">
+            <End Role="Empleado" EntitySet="Empleado" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Estadocita_medicamento" Association="Self.fk_Estadocita_medicamento">
+            <End Role="Medicamento" EntitySet="Medicamento" />
+            <End Role="Estadocita" EntitySet="Estadocita" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Estadocita_Paciente" Association="Self.fk_Estadocita_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Estadocita" EntitySet="Estadocita" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Paciente_estadopaciente" Association="Self.fk_Paciente_estadopaciente">
+            <End Role="Estadopaciente" EntitySet="Estadopaciente" />
+            <End Role="Paciente" EntitySet="Paciente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tratamiento_estadotratamiento" Association="Self.fk_tratamiento_estadotratamiento">
+            <End Role="Estadotratamiento" EntitySet="Estadotratamiento" />
+            <End Role="Tratamiento" EntitySet="Tratamiento" />
+          </AssociationSet>
+          <AssociationSet Name="fk_paciente_municipio" Association="Self.fk_paciente_municipio">
+            <End Role="Municipio" EntitySet="Municipio" />
+            <End Role="Paciente" EntitySet="Paciente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Paciente_tipopaciente" Association="Self.fk_Paciente_tipopaciente">
+            <End Role="Tipopaciente" EntitySet="Tipopaciente" />
+            <End Role="Paciente" EntitySet="Paciente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_paciente_usuario" Association="Self.fk_paciente_usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Paciente" EntitySet="Paciente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_prueba_paciente" Association="Self.fk_prueba_paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Prueba" EntitySet="Prueba" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tratamiento_Paciente" Association="Self.fk_tratamiento_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Tratamiento" EntitySet="Tratamiento" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bd_hospitalEscUAIModelStoreContainer" CdmEntityContainer="bd_hospitalEscUAIEntities">
+          <EntitySetMapping Name="Cita">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Cita">
+              <MappingFragment StoreEntitySet="Cita">
+                <ScalarProperty Name="idcita" ColumnName="idcita" />
+                <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+                <ScalarProperty Name="fecha_cita" ColumnName="fecha_cita" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contactospaciente">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Contactospaciente">
+              <MappingFragment StoreEntitySet="Contactospaciente">
+                <ScalarProperty Name="idcontactospaciente" ColumnName="idcontactospaciente" />
+                <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+                <ScalarProperty Name="nombre_contacto1" ColumnName="nombre_contacto1" />
+                <ScalarProperty Name="nombre_contacto2" ColumnName="nombre_contacto2" />
+                <ScalarProperty Name="apellido_contacto1" ColumnName="apellido_contacto1" />
+                <ScalarProperty Name="apellido_contacto2" ColumnName="apellido_contacto2" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+                <ScalarProperty Name="idMunicipio" ColumnName="idMunicipio" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Controlpermiso">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Controlpermiso">
+              <MappingFragment StoreEntitySet="Controlpermiso">
+                <ScalarProperty Name="idcontrol_permiso" ColumnName="idcontrol_permiso" />
+                <ScalarProperty Name="nombrecontrolpermiso" ColumnName="nombrecontrolpermiso" />
+                <ScalarProperty Name="idtipo_usuario" ColumnName="idtipo_usuario" />
+                <ScalarProperty Name="idPermiso" ColumnName="idPermiso" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departamento">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Departamento">
+              <MappingFragment StoreEntitySet="Departamento">
+                <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+                <ScalarProperty Name="Nombre_depto" ColumnName="Nombre_depto" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleado">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Empleado">
+              <MappingFragment StoreEntitySet="Empleado">
+                <ScalarProperty Name="idempleado" ColumnName="idempleado" />
+                <ScalarProperty Name="idpuesto" ColumnName="idpuesto" />
+                <ScalarProperty Name="idInstitucion" ColumnName="idInstitucion" />
+                <ScalarProperty Name="Nombre_empleado" ColumnName="Nombre_empleado" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estadocita">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Estadocita">
+              <MappingFragment StoreEntitySet="Estadocita">
+                <ScalarProperty Name="idEstadocita" ColumnName="idEstadocita" />
+                <ScalarProperty Name="idcita" ColumnName="idcita" />
+                <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+                <ScalarProperty Name="idmedicamento" ColumnName="idmedicamento" />
+                <ScalarProperty Name="fecha_estadocita" ColumnName="fecha_estadocita" />
+                <ScalarProperty Name="estado_citap" ColumnName="estado_citap" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estadopaciente">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Estadopaciente">
+              <MappingFragment StoreEntitySet="Estadopaciente">
+                <ScalarProperty Name="idEstadopaciente" ColumnName="idEstadopaciente" />
+                <ScalarProperty Name="estadodelpaciente" ColumnName="estadodelpaciente" />
+                <ScalarProperty Name="fecha_estadop" ColumnName="fecha_estadop" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estadotratamiento">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Estadotratamiento">
+              <MappingFragment StoreEntitySet="Estadotratamiento">
+                <ScalarProperty Name="idestadotratamiento" ColumnName="idestadotratamiento" />
+                <ScalarProperty Name="Estadotratamiento1" ColumnName="Estadotratamiento" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Institucion">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Institucion">
+              <MappingFragment StoreEntitySet="Institucion">
+                <ScalarProperty Name="idInstitucion" ColumnName="idInstitucion" />
+                <ScalarProperty Name="nombre_institucion" ColumnName="nombre_institucion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medicamento">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Medicamento">
+              <MappingFragment StoreEntitySet="Medicamento">
+                <ScalarProperty Name="idmedicamento" ColumnName="idmedicamento" />
+                <ScalarProperty Name="Nombre_medicamento" ColumnName="Nombre_medicamento" />
+                <ScalarProperty Name="descripcion_medicamento" ColumnName="descripcion_medicamento" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Municipio">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Municipio">
+              <MappingFragment StoreEntitySet="Municipio">
+                <ScalarProperty Name="idMunicipio" ColumnName="idMunicipio" />
+                <ScalarProperty Name="Nombre_muni" ColumnName="Nombre_muni" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Paciente">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Paciente">
+              <MappingFragment StoreEntitySet="Paciente">
+                <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+                <ScalarProperty Name="idEstadopaciente" ColumnName="idEstadopaciente" />
+                <ScalarProperty Name="idtipopaciente" ColumnName="idtipopaciente" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+                <ScalarProperty Name="idMunicipio" ColumnName="idMunicipio" />
+                <ScalarProperty Name="Codigo_paciente" ColumnName="Codigo_paciente" />
+                <ScalarProperty Name="Nombre_paciente1" ColumnName="Nombre_paciente1" />
+                <ScalarProperty Name="Nombre_paciente2" ColumnName="Nombre_paciente2" />
+                <ScalarProperty Name="Apellido_paciente1" ColumnName="Apellido_paciente1" />
+                <ScalarProperty Name="Apellido_paciente2" ColumnName="Apellido_paciente2" />
+                <ScalarProperty Name="Fecha_nacimiento" ColumnName="Fecha_nacimiento" />
+                <ScalarProperty Name="edad" ColumnName="edad" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="orientacion_sexual" ColumnName="orientacion_sexual" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permiso">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Permiso">
+              <MappingFragment StoreEntitySet="Permiso">
+                <ScalarProperty Name="idPermiso" ColumnName="idPermiso" />
+                <ScalarProperty Name="nombre_permiso" ColumnName="nombre_permiso" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prueba">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Prueba">
+              <MappingFragment StoreEntitySet="Prueba">
+                <ScalarProperty Name="idprueba" ColumnName="idprueba" />
+                <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+                <ScalarProperty Name="prueba_rapVIH" ColumnName="prueba_rapVIH" />
+                <ScalarProperty Name="carga_viral" ColumnName="carga_viral" />
+                <ScalarProperty Name="CD4" ColumnName="CD4" />
+                <ScalarProperty Name="cripto" ColumnName="cripto" />
+                <ScalarProperty Name="histo" ColumnName="histo" />
+                <ScalarProperty Name="TB_lam" ColumnName="TB_lam" />
+                <ScalarProperty Name="comentario" ColumnName="comentario" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Puesto">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Puesto">
+              <MappingFragment StoreEntitySet="Puesto">
+                <ScalarProperty Name="idpuesto" ColumnName="idpuesto" />
+                <ScalarProperty Name="nombre_puesto" ColumnName="nombre_puesto" />
+                <ScalarProperty Name="descripcion_puesto" ColumnName="descripcion_puesto" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipopaciente">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Tipopaciente">
+              <MappingFragment StoreEntitySet="Tipopaciente">
+                <ScalarProperty Name="idtipopaciente" ColumnName="idtipopaciente" />
+                <ScalarProperty Name="iniciales" ColumnName="iniciales" />
+                <ScalarProperty Name="descripciontipopaciente" ColumnName="descripciontipopaciente" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipousuario">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Tipousuario">
+              <MappingFragment StoreEntitySet="Tipousuario">
+                <ScalarProperty Name="idtipo_usuario" ColumnName="idtipo_usuario" />
+                <ScalarProperty Name="nombre_tipousuario" ColumnName="nombre_tipousuario" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tratamiento">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Tratamiento">
+              <MappingFragment StoreEntitySet="Tratamiento">
+                <ScalarProperty Name="idtratamiento" ColumnName="idtratamiento" />
+                <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+                <ScalarProperty Name="idestadotratamiento" ColumnName="idestadotratamiento" />
+                <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+                <ScalarProperty Name="nombre_tratamiento" ColumnName="nombre_tratamiento" />
+                <ScalarProperty Name="descripcion_tratamiento" ColumnName="descripcion_tratamiento" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idcontrol_permiso" ColumnName="idcontrol_permiso" />
+                <ScalarProperty Name="idempleado" ColumnName="idempleado" />
+                <ScalarProperty Name="Nombre_Usuario" ColumnName="Nombre_Usuario" />
+                <ScalarProperty Name="contraseña_usuario" ColumnName="contraseña_usuario" />
+                <ScalarProperty Name="nombre_usuariocreador" ColumnName="nombre_usuariocreador" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

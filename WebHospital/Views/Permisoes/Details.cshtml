@@ -1,0 +1,35 @@
+﻿@model WebHospital.Models.Permiso
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalle registro</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <a>Permiso</a>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_permiso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idPermiso }) |
+    @*@Html.ActionLink("Back to List", "Index")*@
+    <a href="/permisoes/Index?" class="btn btn-default">Regresar</a>
+</p>

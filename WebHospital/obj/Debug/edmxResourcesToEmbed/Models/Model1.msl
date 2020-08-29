@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bd_hospitalEscUAIModelStoreContainer" CdmEntityContainer="bd_hospitalEscUAIEntities">
+    <EntitySetMapping Name="Cita">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Cita">
+        <MappingFragment StoreEntitySet="Cita">
+          <ScalarProperty Name="idcita" ColumnName="idcita" />
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="fecha_cita" ColumnName="fecha_cita" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contactospaciente">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Contactospaciente">
+        <MappingFragment StoreEntitySet="Contactospaciente">
+          <ScalarProperty Name="idcontactospaciente" ColumnName="idcontactospaciente" />
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="nombre_contacto1" ColumnName="nombre_contacto1" />
+          <ScalarProperty Name="nombre_contacto2" ColumnName="nombre_contacto2" />
+          <ScalarProperty Name="apellido_contacto1" ColumnName="apellido_contacto1" />
+          <ScalarProperty Name="apellido_contacto2" ColumnName="apellido_contacto2" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+          <ScalarProperty Name="idMunicipio" ColumnName="idMunicipio" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Controlpermiso">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Controlpermiso">
+        <MappingFragment StoreEntitySet="Controlpermiso">
+          <ScalarProperty Name="idcontrol_permiso" ColumnName="idcontrol_permiso" />
+          <ScalarProperty Name="nombrecontrolpermiso" ColumnName="nombrecontrolpermiso" />
+          <ScalarProperty Name="idtipo_usuario" ColumnName="idtipo_usuario" />
+          <ScalarProperty Name="idPermiso" ColumnName="idPermiso" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departamento">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Departamento">
+        <MappingFragment StoreEntitySet="Departamento">
+          <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+          <ScalarProperty Name="Nombre_depto" ColumnName="Nombre_depto" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empleado">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Empleado">
+        <MappingFragment StoreEntitySet="Empleado">
+          <ScalarProperty Name="idempleado" ColumnName="idempleado" />
+          <ScalarProperty Name="idpuesto" ColumnName="idpuesto" />
+          <ScalarProperty Name="idInstitucion" ColumnName="idInstitucion" />
+          <ScalarProperty Name="Nombre_empleado" ColumnName="Nombre_empleado" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estadocita">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Estadocita">
+        <MappingFragment StoreEntitySet="Estadocita">
+          <ScalarProperty Name="idEstadocita" ColumnName="idEstadocita" />
+          <ScalarProperty Name="idcita" ColumnName="idcita" />
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="idmedicamento" ColumnName="idmedicamento" />
+          <ScalarProperty Name="fecha_estadocita" ColumnName="fecha_estadocita" />
+          <ScalarProperty Name="estado_citap" ColumnName="estado_citap" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estadopaciente">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Estadopaciente">
+        <MappingFragment StoreEntitySet="Estadopaciente">
+          <ScalarProperty Name="idEstadopaciente" ColumnName="idEstadopaciente" />
+          <ScalarProperty Name="estadodelpaciente" ColumnName="estadodelpaciente" />
+          <ScalarProperty Name="fecha_estadop" ColumnName="fecha_estadop" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estadotratamiento">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Estadotratamiento">
+        <MappingFragment StoreEntitySet="Estadotratamiento">
+          <ScalarProperty Name="idestadotratamiento" ColumnName="idestadotratamiento" />
+          <ScalarProperty Name="Estadotratamiento1" ColumnName="Estadotratamiento" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Institucion">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Institucion">
+        <MappingFragment StoreEntitySet="Institucion">
+          <ScalarProperty Name="idInstitucion" ColumnName="idInstitucion" />
+          <ScalarProperty Name="nombre_institucion" ColumnName="nombre_institucion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medicamento">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Medicamento">
+        <MappingFragment StoreEntitySet="Medicamento">
+          <ScalarProperty Name="idmedicamento" ColumnName="idmedicamento" />
+          <ScalarProperty Name="Nombre_medicamento" ColumnName="Nombre_medicamento" />
+          <ScalarProperty Name="descripcion_medicamento" ColumnName="descripcion_medicamento" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Municipio">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Municipio">
+        <MappingFragment StoreEntitySet="Municipio">
+          <ScalarProperty Name="idMunicipio" ColumnName="idMunicipio" />
+          <ScalarProperty Name="Nombre_muni" ColumnName="Nombre_muni" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paciente">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Paciente">
+        <MappingFragment StoreEntitySet="Paciente">
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="idEstadopaciente" ColumnName="idEstadopaciente" />
+          <ScalarProperty Name="idtipopaciente" ColumnName="idtipopaciente" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+          <ScalarProperty Name="idMunicipio" ColumnName="idMunicipio" />
+          <ScalarProperty Name="Codigo_paciente" ColumnName="Codigo_paciente" />
+          <ScalarProperty Name="Nombre_paciente1" ColumnName="Nombre_paciente1" />
+          <ScalarProperty Name="Nombre_paciente2" ColumnName="Nombre_paciente2" />
+          <ScalarProperty Name="Apellido_paciente1" ColumnName="Apellido_paciente1" />
+          <ScalarProperty Name="Apellido_paciente2" ColumnName="Apellido_paciente2" />
+          <ScalarProperty Name="Fecha_nacimiento" ColumnName="Fecha_nacimiento" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="orientacion_sexual" ColumnName="orientacion_sexual" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="fecha_registro" ColumnName="fecha_registro" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permiso">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Permiso">
+        <MappingFragment StoreEntitySet="Permiso">
+          <ScalarProperty Name="idPermiso" ColumnName="idPermiso" />
+          <ScalarProperty Name="nombre_permiso" ColumnName="nombre_permiso" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prueba">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Prueba">
+        <MappingFragment StoreEntitySet="Prueba">
+          <ScalarProperty Name="idprueba" ColumnName="idprueba" />
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="prueba_rapVIH" ColumnName="prueba_rapVIH" />
+          <ScalarProperty Name="carga_viral" ColumnName="carga_viral" />
+          <ScalarProperty Name="CD4" ColumnName="CD4" />
+          <ScalarProperty Name="cripto" ColumnName="cripto" />
+          <ScalarProperty Name="histo" ColumnName="histo" />
+          <ScalarProperty Name="TB_lam" ColumnName="TB_lam" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Puesto">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Puesto">
+        <MappingFragment StoreEntitySet="Puesto">
+          <ScalarProperty Name="idpuesto" ColumnName="idpuesto" />
+          <ScalarProperty Name="nombre_puesto" ColumnName="nombre_puesto" />
+          <ScalarProperty Name="descripcion_puesto" ColumnName="descripcion_puesto" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipopaciente">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Tipopaciente">
+        <MappingFragment StoreEntitySet="Tipopaciente">
+          <ScalarProperty Name="idtipopaciente" ColumnName="idtipopaciente" />
+          <ScalarProperty Name="iniciales" ColumnName="iniciales" />
+          <ScalarProperty Name="descripciontipopaciente" ColumnName="descripciontipopaciente" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipousuario">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Tipousuario">
+        <MappingFragment StoreEntitySet="Tipousuario">
+          <ScalarProperty Name="idtipo_usuario" ColumnName="idtipo_usuario" />
+          <ScalarProperty Name="nombre_tipousuario" ColumnName="nombre_tipousuario" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tratamiento">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Tratamiento">
+        <MappingFragment StoreEntitySet="Tratamiento">
+          <ScalarProperty Name="idtratamiento" ColumnName="idtratamiento" />
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="idestadotratamiento" ColumnName="idestadotratamiento" />
+          <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+          <ScalarProperty Name="nombre_tratamiento" ColumnName="nombre_tratamiento" />
+          <ScalarProperty Name="descripcion_tratamiento" ColumnName="descripcion_tratamiento" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="bd_hospitalEscUAIModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idcontrol_permiso" ColumnName="idcontrol_permiso" />
+          <ScalarProperty Name="idempleado" ColumnName="idempleado" />
+          <ScalarProperty Name="Nombre_Usuario" ColumnName="Nombre_Usuario" />
+          <ScalarProperty Name="contraseña_usuario" ColumnName="contraseña_usuario" />
+          <ScalarProperty Name="nombre_usuariocreador" ColumnName="nombre_usuariocreador" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

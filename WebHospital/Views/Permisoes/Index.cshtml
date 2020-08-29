@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebHospital.Models.Permiso>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista permisos</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+    <a href="/permisoes/Create? " class="btn btn-success">Nuevo registro</a>
+    @*<a href="/permisoes/Regresar? " class="btn btn-default">Regresar</a>*@
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            Permiso
+        </th>
+        <th>
+            Estado
+        </th>
+        <th>Opciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_permiso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.idPermiso }) |
+            @Html.ActionLink("Details", "Details", new { id = item.idPermiso }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.idPermiso })*@
+
+            <a href="/permisoes/Edit?id=@item.idPermiso" class="btn btn-warning">Editar</a> |
+            <a href="/permisoes/Details?id=@item.idPermiso" class="btn btn-info">Detalles</a> |
+            <a href="/permisoes/Delete?id=@item.idPermiso" class="btn btn-danger">Eliminar</a>
+        </td>
+    </tr>
+}
+
+</table>

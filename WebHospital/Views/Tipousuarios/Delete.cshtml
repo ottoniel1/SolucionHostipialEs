@@ -1,0 +1,32 @@
+﻿@model WebHospital.Models.Tipousuario
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h4>desea eliminar el registro?</h4>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tipo usuario
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_tipousuario)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Eliminar" class="btn btn-default" /> |
+    <a href="/Tipousuarios/Index?" class="btn btn-default">Regresar</a>
+    @*@Html.ActionLink("Back to List", "Index")*@
+</div>
+    }
+</div>

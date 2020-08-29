@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebHospital.Models.Controlpermiso>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombrecontrolpermiso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Permiso.nombre_permiso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipousuario.nombre_tipousuario)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombrecontrolpermiso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Permiso.nombre_permiso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipousuario.nombre_tipousuario)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idcontrol_permiso }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idcontrol_permiso }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idcontrol_permiso })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,157 @@
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\WebHospital.dll.config
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\WebHospital.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\WebHospital.pdb
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\csc.exe
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\csc.exe.config
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\csc.rsp
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\csi.exe
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\csi.exe.config
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\csi.rsp
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.AppContext.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.Console.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.IO.Compression.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.Security.Claims.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.ValueTuple.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\vbc.exe
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\vbc.exe.config
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\vbc.rsp
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\VBCSCompiler.exe
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\EntityFramework.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\EntityFramework.SqlServer.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\System.Web.Helpers.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\System.Web.Mvc.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\System.Web.Razor.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\System.Web.Webpages.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\System.Web.Webpages.Razor.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\EntityFramework.xml
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\EntityFramework.SqlServer.xml
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\System.Web.Razor.xml
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\System.Web.Webpages.xml
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\System.Web.Webpages.Razor.xml
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\System.Web.Helpers.xml
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\System.Web.Mvc.xml
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\es\System.Web.Razor.resources.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\es\System.Web.Webpages.resources.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\obj\Debug\WebHospital.csproj.CoreCompileInputs.cache
+C:\Users\Estefanny Yol\source\repos\WebHospital\obj\Debug\WebHospital.csproj.CopyComplete
+C:\Users\Estefanny Yol\source\repos\WebHospital\obj\Debug\WebHospital.dll
+C:\Users\Estefanny Yol\source\repos\WebHospital\obj\Debug\WebHospital.pdb
+C:\Users\Estefanny Yol\source\repos\WebHospital\obj\Debug\WebHospital.csprojAssemblyReference.cache
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\WebHospital.dll.config
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\WebHospital.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\WebHospital.pdb
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\csc.exe
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\csc.exe.config
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\csc.rsp
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\csi.exe
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\csi.exe.config
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\csi.rsp
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\Microsoft.Managed.Core.targets
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.AppContext.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.Collections.Immutable.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.Console.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.IO.Compression.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.IO.FileSystem.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.IO.Pipes.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.Reflection.Metadata.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.Security.AccessControl.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.Security.Claims.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.Security.Principal.Windows.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.ValueTuple.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.Xml.XmlDocument.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.Xml.XPath.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\vbc.exe
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\vbc.exe.config
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\vbc.rsp
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\VBCSCompiler.exe
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\roslyn\VBCSCompiler.exe.config
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\EntityFramework.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\EntityFramework.SqlServer.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\Microsoft.Web.Infrastructure.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\System.Web.Helpers.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\System.Web.Mvc.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\System.Web.Razor.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\System.Web.Webpages.Deployment.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\System.Web.Webpages.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\System.Web.Webpages.Razor.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\EntityFramework.xml
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\EntityFramework.SqlServer.xml
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\System.Web.Razor.xml
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\System.Web.Webpages.xml
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\System.Web.Webpages.Deployment.xml
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\System.Web.Webpages.Razor.xml
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\System.Web.Helpers.xml
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\System.Web.Mvc.xml
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\es\System.Web.Razor.resources.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\es\System.Web.Webpages.resources.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\es\System.Web.Helpers.resources.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\bin\es\System.Web.Mvc.resources.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\obj\Debug\WebHospital.csproj.CoreCompileInputs.cache
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\obj\Debug\WebHospital.csproj.CopyComplete
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\obj\Debug\WebHospital.dll
+C:\proyectos visual studio\proyectotesis\proyectotesis\WebHospital\obj\Debug\WebHospital.pdb

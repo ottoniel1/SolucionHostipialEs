@@ -1,0 +1,98 @@
+﻿@model WebHospital.Models.Contactospaciente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Contactospaciente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_contacto1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_contacto1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_contacto2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_contacto2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido_contacto1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido_contacto1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido_contacto2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido_contacto2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departamento.Nombre_depto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departamento.Nombre_depto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Municipio.Nombre_muni)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Municipio.Nombre_muni)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Paciente.Codigo_paciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paciente.Codigo_paciente)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idcontactospaciente }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

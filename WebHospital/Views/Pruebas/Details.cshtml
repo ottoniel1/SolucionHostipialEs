@@ -1,0 +1,90 @@
+﻿@model WebHospital.Models.Prueba
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Prueba</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.prueba_rapVIH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prueba_rapVIH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.carga_viral)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.carga_viral)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CD4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CD4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cripto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cripto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.histo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.histo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TB_lam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TB_lam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comentario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comentario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Paciente.Codigo_paciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paciente.Codigo_paciente)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idprueba }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

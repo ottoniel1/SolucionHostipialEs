@@ -1,0 +1,66 @@
+﻿@model WebHospital.Models.Empleado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_empleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_empleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Institucion.nombre_institucion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Institucion.nombre_institucion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Puesto.nombre_puesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Puesto.nombre_puesto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idempleado }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

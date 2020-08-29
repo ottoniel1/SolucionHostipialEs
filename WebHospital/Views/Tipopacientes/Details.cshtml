@@ -1,0 +1,42 @@
+﻿@model WebHospital.Models.Tipopaciente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tipopaciente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.iniciales)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iniciales)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripciontipopaciente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripciontipopaciente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idtipopaciente }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
